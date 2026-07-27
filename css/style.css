@@ -517,3 +517,51 @@ img {
         font-size: 1rem;
     }
 }
+
+/* ===== EVENTS PAGE ===== */
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.event-card {
+    background: #f8fafc;
+    border: 1px solid #e9edf2;
+    border-radius: 8px;
+    padding: 28px;
+    transition: box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+    box-shadow: 0 6px 18px rgba(1,57,94,.08);
+}
+
+.event-card h2 {
+    color: #01395e;
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+}
+
+.event-date {
+    color: #01395e;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.event-card p {
+    color: #2c3e50;
+    margin-bottom: 18px;
+}
+
+.event-status {
+    display: inline-block;
+    background: #01395e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: .85rem;
+    font-weight: 600;
+}
