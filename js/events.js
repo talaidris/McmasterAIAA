@@ -6,6 +6,15 @@ const events = [
         endTime: "7:30 PM",
         location: "McMaster University",
         description: "Come meet the McMaster AIAA team at ClubFest!"
+    },
+
+    {
+        name: "Kickoff Event",
+        date: "2026-09-24",
+        startTime: "",
+        endTime: "",
+        location: "",
+        description: "We’re launching the academic year with a kickoff event where we will introduce our branch and initiatives. This is your opportunity to meet fellow AIAA members and get an overview of future events and projects."
     }
 ];
 
