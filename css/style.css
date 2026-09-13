@@ -777,3 +777,343 @@ img {
     font-size: .85rem;
     font-weight: 600;
 }
+
+/* =========================
+   EVENTS CALENDAR
+   ========================= */
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.calendar-header h1 {
+    margin: 0;
+    min-width: 250px;
+    text-align: center;
+}
+
+.calendar-nav {
+    border: none;
+    background: #01395e;
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.calendar-nav:hover {
+    transform: scale(1.08);
+}
+
+.calendar-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.today-button {
+    border: 1px solid #01395e;
+    background: white;
+    color: #01395e;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.today-button:hover {
+    background: #01395e;
+    color: white;
+}
+
+.calendar {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #01395e;
+    color: white;
+}
+
+.calendar-weekdays div {
+    padding: 14px 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+    min-height: 120px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    position: relative;
+    background: white;
+}
+
+.calendar-day:nth-child(7n) {
+    border-right: none;
+}
+
+.day-number {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.other-month {
+    background: #f7f7f7;
+    color: #aaa;
+}
+
+.calendar-event {
+    margin-top: 8px;
+    padding: 7px;
+    border-radius: 6px;
+    background: #01395e;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.calendar-event:hover {
+    transform: translateY(-2px);
+}
+
+.calendar-event strong {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.calendar-event span {
+    display: block;
+    opacity: 0.9;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .calendar-header {
+        gap: 15px;
+    }
+
+    .calendar-header h1 {
+        min-width: 180px;
+        font-size: 24px;
+    }
+
+    .calendar-day {
+        min-height: 90px;
+        padding: 5px;
+    }
+
+    .calendar-weekdays div {
+        font-size: 12px;
+        padding: 10px 4px;
+    }
+
+    .calendar-event {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+}
+
+/* =========================
+   EVENT MODAL
+   ========================= */
+
+.event-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.event-modal.show {
+    display: flex;
+}
+
+.event-modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+
+    animation: eventModalAppear 0.2s ease-out;
+}
+
+@keyframes eventModalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Close button */
+
+.close-modal {
+    position: absolute;
+
+    top: 14px;
+    right: 18px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    background: transparent;
+
+    color: #555;
+
+    font-size: 30px;
+    line-height: 30px;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    transition: 0.2s ease;
+}
+
+.close-modal:hover {
+    color: #01395e;
+    transform: scale(1.1);
+}
+
+
+/* Event title */
+
+.event-modal-content h2 {
+    margin: 0 45px 25px 0;
+
+    color: #01395e;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* Event information */
+
+.event-details {
+    margin-bottom: 20px;
+}
+
+.event-details p {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 14px 0;
+
+    color: #333;
+
+    font-size: 16px;
+}
+
+.event-icon {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+
+    font-size: 18px;
+}
+
+
+/* Description */
+
+.modal-description {
+    margin: 20px 0 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #ddd;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* Prevent page scrolling while modal is open */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .event-modal {
+        padding: 15px;
+    }
+
+    .event-modal-content {
+        padding: 28px 22px;
+    }
+
+    .event-modal-content h2 {
+        font-size: 24px;
+    }
+
+    .event-details p {
+        font-size: 15px;
+    }
+
+}
