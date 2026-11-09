@@ -1,0 +1,4 @@
+{
+  "_howTo": "Edit this file to update the Sponsors page. Add each sponsor under a tier. \"logo\" is optional (drop the image into public/images/sponsors/ and use \"images/sponsors/name.png\"); without it the name is shown as text. \"url\" is optional and makes the card a link. Leave \"tiers\" empty to show the 'Your logo here' placeholders.",
+  "tiers": []
+}

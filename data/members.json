@@ -1,0 +1,143 @@
+{
+  "_howTo": "Update names, roles, programs and photos here. Photos should be placed in public/images/members/ and referenced as images/members/filename.jpg.",
+  "advisor": {
+    "name": "Dr. Cree",
+    "role": "Faculty Advisor",
+    "program": "Mechanical Engineering Professor",
+    "photo": "images/members/cree.jpeg",
+    "linkedin": "https://www.linkedin.com/in/duncan-cree-5a221b71/"
+  },
+  "chair": {
+    "name": "Danah Shaath",
+    "role": "Chair & Co-Founder",
+    "program": "Mech Eng, Year 3",
+    "photo": "images/members/danah.jpeg",
+    "linkedin": "https://www.linkedin.com/in/danah-shaath/"
+  },
+  "viceChair": {
+    "name": "Tasha Coe",
+    "role": "Vice Chair",
+    "program": "Mech Eng, Year 3",
+    "photo": "images/members/tasha.jpeg",
+    "linkedin": "https://www.linkedin.com/in/tasha-coe/"
+  },
+  "secretaries": [
+    {
+      "name": "Koen Gerber",
+      "role": "Treasurer",
+      "program": "Mech + MGMT, Year 3",
+      "photo": "images/members/koen.jpeg",
+      "linkedin": "https://www.linkedin.com/in/koen-gerber"
+    },
+    {
+      "name": "Giada Dipasquale",
+      "role": "Secretary",
+      "program": "Mech + MGMT, Year 3",
+      "photo": "images/members/giada di pasquale.jpeg",
+      "linkedin": "https://www.linkedin.com/in/giada-dipasquale-715b69325/"
+    }
+  ],
+  "departments": [
+    {
+      "name": "Projects",
+      "members": [
+        {
+          "name": "Basmalah Saeed",
+          "role": "Project Manager",
+          "program": "Eng Phys + MGMT, Year 2",
+          "photo": "images/members/basmalah.jpeg",
+          "linkedin": "https://www.linkedin.com/in/basmalaha/"
+        },
+        {
+          "name": "Lucas Cherian",
+          "role": "Project Manager",
+          "program": "Eng Phys, Year 3",
+          "photo": "images/members/lucas.jpeg",
+          "linkedin": "https://www.linkedin.com/in/lucas-cherian/"
+        }
+      ]
+    },
+    {
+      "name": "Web & Technology",
+      "members": [
+        {
+          "name": "Atharva Ghodke",
+          "role": "WebMaster",
+          "program": "Automation Eng, Year 2",
+          "photo": "images/members/atharva.jpeg",
+          "linkedin": "https://www.linkedin.com/in/atharva-ghodke-949251382/"
+        },
+        {
+          "name": "Tala Idris",
+          "role": "WebMaster",
+          "program": "Comp Sci, Year 3",
+          "photo": "images/members/tala.jpeg",
+          "linkedin": "https://www.linkedin.com/in/tala-idris/"
+        }
+      ]
+    },
+    {
+      "name": "Outreach",
+      "members": [
+        {
+          "name": "Sophia Kostelnik",
+          "role": "Outreach Director",
+          "program": "iBioMed, Year 1",
+          "photo": "images/members/sophia.jpeg",
+          "linkedin": "https://www.linkedin.com/in/sophia-kostelnik/"
+        },
+        {
+          "name": "Kayla Siriban",
+          "role": "Outreach Director",
+          "program": "Mech Eng, Year 2.5",
+          "photo": "images/members/kayla.jpeg",
+          "linkedin": "https://www.linkedin.com/in/kaylasiriban/"
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "members": [
+        {
+          "name": "Boluwatiwi Mafikuyomi",
+          "role": "Events Lead",
+          "program": "Elec Eng, Year 3",
+          "photo": "images/members/tiwi.jpeg",
+          "linkedin": "https://www.linkedin.com/in/boluwatiwi-mafikuyomi-513374213/"
+        }
+      ]
+    },
+    {
+      "name": "Workshops",
+      "members": [
+        {
+          "name": "Maffhew Rebelo",
+          "role": "Workshop Lead",
+          "program": "Mech Eng, Year 3",
+          "photo": "images/members/maffhew.jpeg",
+          "linkedin": "https://www.linkedin.com/in/matthewrebelo1/"
+        }
+      ]
+    },
+    {
+      "name": "Media",
+      "members": [
+        {
+          "name": "Christine Qin",
+          "role": "Media Vice President",
+          "program": "Civil Eng, Year 2",
+          "photo": "images/members/christine.jpeg",
+          "linkedin": "https://www.linkedin.com/in/christine-qin/"
+        },
+        {
+          "name": "Nalini Chaudhry",
+          "role": "Media Director",
+          "program": "Chem Eng, Year 2",
+          "photo": "images/members/nalini.jpeg",
+          "linkedin": "https://www.linkedin.com/in/nalini-chaudhry-a813a3389/"
+        }
+      ]
+    }
+  ],
+  "members": []
+}

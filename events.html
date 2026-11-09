@@ -1,137 +1,110 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McMaster AIAA | Events</title>
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>McMaster AIAA | Events</title>
+<meta name="description" content="Kickoff event, guest speakers, technical workshops, and the AIAA Region I Student Conference.">
+<meta name="theme-color" content="#0b2a5b">
+<script>document.documentElement.classList.add("js");try{if(sessionStorage.getItem("aiaa-t")){document.documentElement.classList.add("is-entering");sessionStorage.removeItem("aiaa-t")}}catch(e){}</script>
+<link rel="preload" href="fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
+<div class="curtain" aria-hidden="true"><span>AIAA</span></div>
+<a class="skip" href="#main">Skip to content</a>
 
-    <div id="container">
-        <!-- ===== HEADER ===== -->
-        <div id="header">
-            <div class="header-inner">
-                <a href="index.html" id="homelink">
-                    <div id="headerlogo">
-                        <img src="images/wingslogo_whitebg.png" id="logo" alt="McMaster AIAA logo">
-                    </div>
-                    <div id="headertext">
-                        <h1>McMaster AIAA Student Branch</h1>
-                        <p>The American Institute of Aeronautics and Astronautics at McMaster</p>
-                    </div>
-                </a>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div id="navbar">
-                    <a href="index.html" class="link">Home</a>
-                    <a href="about.html" class="link">About</a>
-                    <a href="events.html" class="link">Events</a>
-                    <a href="calendar.html" class="link">Calendar</a>
-                    <a href="join.html" class="link">Join</a>
-                </div>
-            </div>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="McMaster AIAA Student Branch, home">
+    <img src="images/logo.png" alt="AIAA McMaster University logo" width="120" height="60">
+    <span class="brand-text"><strong>McMaster AIAA Student Branch</strong><small>The American Institute of Aeronautics and Astronautics at McMaster</small></span>
+  </a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html" aria-current="page">Events</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="members.html">Members</a>
+      <a href="projects.html">Projects</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a class="nav-join" href="join.html">Join</a>
+  </nav>
+</header>
+
+<aside class="altimeter" aria-hidden="true">
+  <div class="alt-track">
+    <div class="alt-fill"></div>
+    <div class="alt-tick" style="bottom:0%"><span>Ground</span></div>
+    <div class="alt-tick" style="bottom:15%"><span>Cruising altitude<br>12 km</span></div>
+    <div class="alt-tick" style="bottom:50%"><span>K&aacute;rm&aacute;n line<br>100 km</span></div>
+    <div class="alt-tick" style="bottom:100%"><span>Low Earth orbit<br>400 km</span></div>
+    <div class="alt-marker"><div class="alt-readout"><b data-alt>0</b><small>km</small></div></div>
+  </div>
+</aside>
+
+<main id="main">
+
+<section class="page-head">
+  <div class="wrap">
+    <h1 class="long"><span class="line"><span>Events, Initiatives,</span></span><span class="line"><span>&amp; Projects</span></span></h1>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2rem">
+  <div class="wrap">
+    <ul class="rows">
+      <li>
+        <div><p class="when">September 2026</p><h3>Kickoff Event</h3></div>
+        <p>We&rsquo;re launching the academic year with a kickoff event where we will introduce our branch and initiatives. This is your opportunity to meet fellow AIAA members and get an overview of future events and projects.</p>
+      </li>
+      <li>
+        <div><h3>Industry Guest Speakers</h3></div>
+        <p>Join us for speaker events and hear inspiring and unique talks from professionals in aerospace and related fields.</p>
+      </li>
+      <li>
+        <div><p class="when">Starts in October</p><h3>Monthly Technical Workshops</h3></div>
+        <div>
+          <p>Participate in hands-on and collaborative workshops.</p>
+          <p>Learn about industry-level software, and topics covering aerospace fundamentals, systems, and technologies.</p>
         </div>
+      </li>
+      <li>
+        <div><p class="when">April 2027</p><h3>Regional I Conference</h3></div>
+        <p>Take your research beyond the classroom. Submit an abstract, present at the AIAA Region I Student Conference, and network with aerospace students, engineering professionals, and industry leaders. <a class="link-arrow" href="https://aiaa.org/get-involved/university-students/regional-student-conferences/" target="_blank" rel="noopener">Learn more</a></p>
+      </li>
+      <li>
+        <div><h3>Sponsors &amp; Partners</h3></div>
+        <div><a class="btn" href="join.html">Partner with us!</a></div>
+      </li>
+    </ul>
+  </div>
+</section>
 
-        <!-- ===== PAGE CONTENT ===== -->
-        <div class="page-content">
-            <div class="container">
-                <h1>Events, Initiatives, &amp; Projects</h1>
+</main>
 
-                <div class="initiative-list">
-                    <div class="initiative-item">
-                        <!-- <div class="initiative-image"></div> -->
-                        <div class="initiative-text">
-                            <h2>Kickoff Event – September 2026</h2>
-                            <p>
-                                We’re launching the academic year with a kickoff event where we will introduce our
-                                branch
-                                and initiatives. This is your opportunity to meet fellow AIAA members and get an
-                                overview of
-                                future events and projects.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="initiative-item">
-                        <!-- <div class="initiative-image"></div> -->
-                        <div class="initiative-text">
-                            <h2>Industry Guest Speakers</h2>
-                            <p>
-                                Join us for speaker events and hear inspiring and unique talks from professionals in
-                                aerospace and related fields.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="initiative-item">
-                        <!-- <div class="initiative-image"></div> -->
-                        <div class="initiative-text">
-                            <h2>Monthly Technical Workshops</h2>
-                            <p>
-                                Participate in hands on and collaborative workshops. <br>
-                                Learn about industry level software, and topics covering aerospace fundamentals,
-                                systems,
-                                and technologies. Starts in October.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="initiative-item">
-                        <!-- <div class="initiative-image"></div> -->
-                        <div class="initiative-text">
-                            <h2>April 2027 Regional I Conference</h2>
-                            <p>
-                                Take your research beyond the classroom. Submit an abstract, present at the AIAA Region
-                                I Student Conference, and network with aerospace students, engineering professionals,
-                                and industry leaders. <a
-                                    href="https://aiaa.org/get-involved/university-students/regional-student-conferences/">
-                                    learn more.</a> </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sponsor-section">
-                    <h2>Sponsors &amp; Partners</h2>
-                    <p><a href="join.html">Partner with us!</a></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== FOOTER ===== -->
-        <div id="footer">
-            <div class="container footer-inner">
-                <div class="footer-col">
-                    <p>McMaster AIAA</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/mcmasteraiaa/" target="_blank">
-                            <img class="footer-logo" src="images/instagramLogo.png" alt="Instagram">
-                        </a>
-                        <a href="https://www.linkedin.com/company/mcmasteraiaa/" target="_blank">
-                            <img class="footer-logo" src="images/Icon-Linkedin.png" alt="LinkedIn">
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <p>Email: <a target="_blank" href="mailto:mac_aiaa@mcmaster.ca">mac_aiaa@mcmaster.ca</a></p>
-                    <p><a href="join.html">Join us</a></p>
-                </div>
-            </div>
-        </div>
+<footer class="footer on-dark">
+  <div class="wrap">
+    <a class="footer-cta" href="join.html">Join us</a>
+    <div class="footer-row">
+      <div>
+        <strong>McMaster AIAA</strong>
+        <p>The American Institute of Aeronautics and Astronautics at McMaster</p>
+      </div>
+      <p>Email: <a class="email" href="mailto:mac_aiaa@mcmaster.ca">mac_aiaa@mcmaster.ca</a><br>Sponsorship: <a class="email" href="mailto:mcmaster.aiaa@gmail.com">mcmaster.aiaa@gmail.com</a></p>
+      <div class="social">
+        <a href="https://www.instagram.com/mcmasteraiaa/" target="_blank" rel="noopener" aria-label="McMaster AIAA on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.linkedin.com/company/mcmasteraiaa/" target="_blank" rel="noopener" aria-label="McMaster AIAA on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3V9.75zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2.05 3.75-2.05 4 0 4.74 2.63 4.74 6.05V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.32-1.96 2.69V21h-4V9.75z"/></svg></a>
+      </div>
     </div>
+  </div>
+</footer>
 
-    <script src="js/script.js" defer></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
 </body>
-
 </html>

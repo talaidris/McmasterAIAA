@@ -1,114 +1,112 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McMaster AIAA | About</title>
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>McMaster AIAA | About</title>
+<meta name="description" content="What AIAA is, why the McMaster branch exists, and what we are working toward.">
+<meta name="theme-color" content="#0b2a5b">
+<script>document.documentElement.classList.add("js");try{if(sessionStorage.getItem("aiaa-t")){document.documentElement.classList.add("is-entering");sessionStorage.removeItem("aiaa-t")}}catch(e){}</script>
+<link rel="preload" href="fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
+<div class="curtain" aria-hidden="true"><span>AIAA</span></div>
+<a class="skip" href="#main">Skip to content</a>
 
-    <div id="container">
-        <!-- ===== HEADER ===== -->
-        <div id="header">
-            <div class="header-inner">
-                <a href="index.html" id="homelink">
-                    <div id="headerlogo">
-                        <img src="images/wingslogo_whitebg.png" id="logo" alt="McMaster AIAA logo">
-                    </div>
-                    <div id="headertext">
-                        <h1>McMaster AIAA Student Branch</h1>
-                        <p>The American Institute of Aeronautics and Astronautics at McMaster</p>
-                    </div>
-                </a>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div id="navbar">
-                    <a href="index.html" class="link">Home</a>
-                    <a href="about.html" class="link">About</a>
-                    <a href="events.html" class="link">Events</a>
-                    <a href="calendar.html" class="link">Calendar</a>
-                    <a href="join.html" class="link">Join</a>
-                </div>
-            </div>
-        </div>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="McMaster AIAA Student Branch, home">
+    <img src="images/logo.png" alt="AIAA McMaster University logo" width="120" height="60">
+    <span class="brand-text"><strong>McMaster AIAA Student Branch</strong><small>The American Institute of Aeronautics and Astronautics at McMaster</small></span>
+  </a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="events.html">Events</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="members.html">Members</a>
+      <a href="projects.html">Projects</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a class="nav-join" href="join.html">Join</a>
+  </nav>
+</header>
 
-        <!-- ===== PAGE CONTENT ===== -->
-        <div class="page-content">
-            <div class="container">
-                <h1>About Us</h1>
+<aside class="altimeter" aria-hidden="true">
+  <div class="alt-track">
+    <div class="alt-fill"></div>
+    <div class="alt-tick" style="bottom:0%"><span>Ground</span></div>
+    <div class="alt-tick" style="bottom:15%"><span>Cruising altitude<br>12 km</span></div>
+    <div class="alt-tick" style="bottom:50%"><span>K&aacute;rm&aacute;n line<br>100 km</span></div>
+    <div class="alt-tick" style="bottom:100%"><span>Low Earth orbit<br>400 km</span></div>
+    <div class="alt-marker"><div class="alt-readout"><b data-alt>0</b><small>km</small></div></div>
+  </div>
+</aside>
 
-                <section>
-                    <h2>What is AIAA?</h2>
-                    <p>
-                        The American Institute of Aeronautics and Astronautics (AIAA) is the world's largest aerospace
-                        professional society, bringing together students, researchers, engineers, industry leaders, and
-                        innovators across the aerospace sector.
-                    </p>
-                    <br>
-                    <p>
-                        AIAA supports the advancement of aerospace science, engineering, and technology through
-                        professional development, networking, publications, conferences, competitions, and educational
-                        initiatives.
-                    </p>
-                </section>
+<main id="main">
 
-                <section>
-                    <h2>Our Branch</h2>
-                    <p>
-                        The McMaster AIAA Student Branch was established to create a hub for aerospace-related
-                        activities on campus. We aim to connect students from all disciplines who share an interest in
-                        aviation, space exploration, aerospace engineering, and emerging technologies.
-                    </p>
-                </section>
+<section class="page-head">
+  <div class="wrap">
+    <h1><span class="line"><span>About us</span></span></h1>
+  </div>
+</section>
 
-                <section>
-                    <h2>Our Goals</h2>
-                    <ul class="goals-list">
-                        <li>Unite and grow McMaster's aerospace community</li>
-                        <li>Provide professional development opportunities for students</li>
-                        <li>Connect members with industry professionals and researchers</li>
-                        <li>Support participation in aerospace competitions and projects</li>
-                        <li>Promote aerospace research and innovation</li>
-                    </ul>
-                </section>
-            </div>
-        </div>
-
-        <!-- ===== FOOTER ===== -->
-        <div id="footer">
-            <div class="container footer-inner">
-                <div class="footer-col">
-                    <p>McMaster AIAA</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/mcmasteraiaa/" target="_blank">
-                            <img class="footer-logo" src="images/instagramLogo.png" alt="Instagram">
-                        </a>
-                        <a href="https://www.linkedin.com/company/mcmasteraiaa/" target="_blank">
-                            <img class="footer-logo" src="images/Icon-Linkedin.png" alt="LinkedIn">
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <p>Email: <a target="_blank" href="mailto:mac_aiaa@mcmaster.ca">mac_aiaa@mcmaster.ca</a></p>
-                    <p><a href="join.html">Join us</a></p>
-                </div>
-            </div>
-        </div>
+<section class="section" style="padding-top:2rem">
+  <div class="wrap split">
+    <h2><span class="line"><span>What is AIAA?</span></span></h2>
+    <div class="body fade-in">
+      <p>The American Institute of Aeronautics and Astronautics (AIAA) is the world&rsquo;s largest aerospace professional society, bringing together students, researchers, engineers, industry leaders, and innovators across the aerospace sector.</p>
+      <p>AIAA supports the advancement of aerospace science, engineering, and technology through professional development, networking, publications, conferences, competitions, and educational initiatives.</p>
     </div>
+  </div>
+</section>
 
-    <script src="js/script.js" defer></script>
+<section class="section" style="padding-top:0">
+  <div class="wrap split">
+    <h2><span class="line"><span>Our Branch</span></span></h2>
+    <div class="body fade-in">
+      <p>The McMaster AIAA Student Branch was established to create a hub for aerospace-related activities on campus. We aim to connect students from all disciplines who share an interest in aviation, space exploration, aerospace engineering, and emerging technologies.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="section-title"><span class="line"><span>Our goals</span></span></h2>
+    <ul class="rows goal-list">
+      <li><p>Unite and grow McMaster&rsquo;s aerospace community</p></li>
+      <li><p>Provide professional development opportunities for students</p></li>
+      <li><p>Connect members with industry professionals and researchers</p></li>
+      <li><p>Support participation in aerospace competitions and projects</p></li>
+      <li><p>Promote aerospace research and innovation</p></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer on-dark">
+  <div class="wrap">
+    <a class="footer-cta" href="join.html">Join us</a>
+    <div class="footer-row">
+      <div>
+        <strong>McMaster AIAA</strong>
+        <p>The American Institute of Aeronautics and Astronautics at McMaster</p>
+      </div>
+      <p>Email: <a class="email" href="mailto:mac_aiaa@mcmaster.ca">mac_aiaa@mcmaster.ca</a><br>Sponsorship: <a class="email" href="mailto:mcmaster.aiaa@gmail.com">mcmaster.aiaa@gmail.com</a></p>
+      <div class="social">
+        <a href="https://www.instagram.com/mcmasteraiaa/" target="_blank" rel="noopener" aria-label="McMaster AIAA on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.linkedin.com/company/mcmasteraiaa/" target="_blank" rel="noopener" aria-label="McMaster AIAA on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3V9.75zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2.05 3.75-2.05 4 0 4.74 2.63 4.74 6.05V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.32-1.96 2.69V21h-4V9.75z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
 </body>
-
 </html>

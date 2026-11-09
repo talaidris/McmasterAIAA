@@ -1,0 +1,233 @@
+/* ==========================================================================
+   Projects page.
+   Self-contained: every class starts with "pj-", so it cannot clash with
+   styles.css. The cards are white with navy text, so they read well on
+   both a light page and a dark page.
+   To change the colours, edit the variables on .pj-list below.
+   ========================================================================== */
+
+.pj-list {
+  --pj-ink: var(--navy, #0b2a5b);
+  --pj-text: #2b3a55;
+  --pj-muted: #54627b;
+  --pj-soft: #eaf0f8;
+  --pj-line: rgba(11, 42, 91, 0.14);
+  --pj-accent: #2f6fa3;
+
+  display: grid;
+  gap: clamp(1.6rem, 3.5vw, 2.6rem);
+}
+
+/* ---------- Card ---------- */
+.pj-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background: #fff;
+  color: var(--pj-ink);
+  border: 1px solid var(--pj-line);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(11, 42, 91, 0.06), 0 18px 40px -22px rgba(11, 42, 91, 0.35);
+  transition: box-shadow 0.45s ease, opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pj-card:hover {
+  box-shadow: 0 1px 2px rgba(11, 42, 91, 0.06), 0 28px 56px -24px rgba(11, 42, 91, 0.45);
+}
+
+/* Cards fade up once as they scroll into view (only when JavaScript is running). */
+.js .pj-card { opacity: 0; transform: translateY(18px); }
+.js .pj-card.is-in { opacity: 1; transform: none; }
+
+/* ---------- Image ---------- */
+.pj-media {
+  position: relative;
+  aspect-ratio: 21 / 8;
+  max-height: 26rem;
+  width: 100%;
+  background: var(--pj-soft);
+  overflow: hidden;
+  isolation: isolate;
+}
+/* A blurred copy of the image fills the frame, so images of any shape look intentional. */
+.pj-media::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  background: var(--pj-img) center / cover no-repeat;
+  filter: blur(22px) saturate(1.15);
+  opacity: 0.9;
+  z-index: -1;
+}
+.pj-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pj-card:hover .pj-media img { transform: scale(1.03); }
+
+.pj-media.is-empty {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 21 / 5;
+  background: linear-gradient(150deg, var(--pj-ink), #1a3d6d 70%, #2f6fa3);
+}
+.pj-media.is-empty::before { display: none; }
+.pj-media-placeholder {
+  font-family: var(--display, "Big Shoulders Display", "Arial Narrow", Impact, sans-serif);
+  font-weight: 900;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ---------- Text and team, side by side ---------- */
+.pj-body {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+}
+.pj-body.no-team { grid-template-columns: minmax(0, 1fr); }
+.pj-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+  min-width: 0;
+}
+.pj-head { display: grid; gap: 0.45rem; }
+.pj-name {
+  margin: 0;
+  font-family: var(--display, "Big Shoulders Display", "Arial Narrow", Impact, sans-serif);
+  font-weight: 800;
+  font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+  line-height: 0.95;
+  color: var(--pj-ink);
+}
+.pj-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.7rem; }
+.pj-dept { color: var(--pj-muted); font-weight: 500; }
+.pj-status {
+  background: var(--pj-soft);
+  color: var(--pj-ink);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.18rem 0.65rem;
+  border-radius: 999px;
+}
+.pj-desc {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--pj-text);
+}
+
+.pj-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.15rem;
+  border: 2px solid var(--pj-ink);
+  border-radius: 999px;
+  color: var(--pj-ink);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.25s, color 0.25s, gap 0.3s;
+}
+.pj-link:hover { background: var(--pj-ink); color: #fff; gap: 0.8rem; }
+.pj-link:focus-visible,
+.pj-person-name a:focus-visible { outline: 3px solid var(--pj-accent); outline-offset: 3px; }
+
+/* ---------- Team ---------- */
+.pj-team {
+  min-width: 0;
+  padding: 1.3rem 1.4rem 1.5rem;
+  background: var(--pj-soft);
+  border-radius: 0.9rem;
+}
+.pj-team-title {
+  margin: 0 0 0.9rem;
+  font-family: var(--body, system-ui, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--pj-muted);
+}
+.pj-people {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1rem 1.2rem;
+}
+.pj-person { display: flex; align-items: center; gap: 0.75rem; min-width: 0; }
+.pj-avatar {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--pj-line);
+  color: var(--pj-ink);
+}
+.pj-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pj-initials {
+  font-family: var(--display, "Big Shoulders Display", "Arial Narrow", Impact, sans-serif);
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.pj-person-text { min-width: 0; }
+.pj-person-name { font-weight: 600; font-size: 0.95rem; line-height: 1.25; overflow-wrap: anywhere; color: var(--pj-ink); }
+.pj-person-name a { color: inherit; text-decoration: none; }
+.pj-person-name a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pj-lead {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.08rem 0.5rem;
+  background: var(--pj-ink);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  vertical-align: 0.1em;
+}
+.pj-person-role { font-size: 0.85rem; line-height: 1.3; color: var(--pj-muted); }
+
+.pj-social {
+  flex: none;
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: var(--pj-ink);
+  transition: background-color 0.25s, color 0.25s;
+}
+.pj-social svg { width: 1.1rem; height: 1.1rem; }
+.pj-social:hover { background: var(--pj-ink); color: #fff; }
+.pj-social:focus-visible { outline: 3px solid var(--pj-accent); outline-offset: 3px; }
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 860px) {
+  .pj-media { aspect-ratio: 16 / 10; }
+  .pj-media.is-empty { aspect-ratio: 16 / 7; }
+  .pj-body { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .js .pj-card { opacity: 1; transform: none; }
+  .pj-card, .pj-media img, .pj-link { transition: none; }
+  .pj-card:hover .pj-media img { transform: none; }
+}
