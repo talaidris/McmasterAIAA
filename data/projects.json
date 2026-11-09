@@ -1,0 +1,17 @@
+{
+  "_howTo": "Each project is one card. 'team' is optional. For each person: 'name' (required), 'role', 'lead' (true for the project lead, who is shown first with a Lead tag), 'photo' (a path like images/members/jane-doe.jpg; with no photo their initials are shown) and 'linkedin' (optional link on their name). 'status' is optional (for example 'In progress'). The team below is PLACEHOLDER: replace it with the real people.",
+  "projects": [
+    {
+      "name": "FIRESAT",
+      "image": "images/projects/firesat.jpeg",
+      "imagePosition": "center 40%",
+      "department": "Aerospace Research",
+      "description": "FIRESAT (Fire Intervention and Rescue Expedition Satellite) is a student-led aerospace research initiative developing a low-cost wildfire detection system for future integration into a 3U CubeSat. The project aims to test the AI model Sundance for thermal-based wildfire detection under mission-like conditions on a high-altitude balloon (HAB), combining aerospace engineering, embedded systems, and artificial intelligence.",
+      "url": "https://www.instagram.com/p/DbuTd8oEROP/",
+      "team": [
+        { "name": "Daniel Wen", "role": "Project Manager", "photo": "images/members/daniel.jpeg", "linkedin": "https://www.linkedin.com/in/wen-daniel/" },
+        { "name": "Kiran Suresh", "role": "Project Lead", "photo": "images/members/kiran.jpeg", "linkedin": "https://www.linkedin.com/in/kiran-suresh-17a685291/" }
+      ]
+    }
+  ]
+}

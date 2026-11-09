@@ -1,0 +1,31 @@
+{
+  "_howTo": "Edit this file to update the Calendar. An event with a \"date\" (YYYY-MM-DD) shows on that day. An event with only a \"month\" (YYYY-MM) is listed under 'dates to be announced' for that month. \"time\", \"location\" and \"description\" are optional.",
+  "events": [
+    {
+      "title": "ClubFest",
+      "date": "2026-09-14",
+      "time": "4:30 PM - 7:30 PM",
+      "location": "Booth 26, JHE Field",
+      "description": "Come find McMaster AIAA at ClubFest. Check out what we have planned for the year and meet some of the people behind McMaster AIAA."
+    },
+    {
+      "title": "Kickoff Event",
+      "date": "2026-09-24",
+      "time": "4:00 PM - 6:30 PM (doors open 3:45 PM)",
+      "location": "BSB B103",
+      "description": "A mini conference to kick off McMaster AIAA. Learn from industry professionals from NASA and Bombardier and hear directly from people working in aerospace."
+    },
+        {
+      "title": "Workshop 01: Foamboard Glider",
+      "date": "2026-11-03",
+      "time": "6:30 PM - 8:30 PM",
+      "location": "JHE A102",
+      "description": "Learn the basics of aerodynamics, design and build your own glider, and put it to the test in a flight-distance competition. No experience needed. Limited spots, so register through the link in our Instagram bio."
+    },
+    {
+      "title": "AIAA Region I Student Conference",
+      "month": "2027-04",
+      "description": "Submit an abstract, present your research, and network with aerospace students, engineering professionals, and industry leaders."
+    }
+  ]
+}

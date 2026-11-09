@@ -1,214 +1,111 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McMaster AIAA | Calendar</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>McMaster AIAA | Calendar</title>
+<meta name="description" content="Upcoming McMaster AIAA events by month.">
+<meta name="theme-color" content="#0b2a5b">
+<script>document.documentElement.classList.add("js");try{if(sessionStorage.getItem("aiaa-t")){document.documentElement.classList.add("is-entering");sessionStorage.removeItem("aiaa-t")}}catch(e){}</script>
+<link rel="preload" href="fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
+<div class="curtain" aria-hidden="true"><span>AIAA</span></div>
+<a class="skip" href="#main">Skip to content</a>
 
-    <div id="container">
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="McMaster AIAA Student Branch, home">
+    <img src="images/logo.png" alt="AIAA McMaster University logo" width="120" height="60">
+    <span class="brand-text"><strong>McMaster AIAA Student Branch</strong><small>The American Institute of Aeronautics and Astronautics at McMaster</small></span>
+  </a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="calendar.html" aria-current="page">Calendar</a>
+      <a href="members.html">Members</a>
+      <a href="projects.html">Projects</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a class="nav-join" href="join.html">Join</a>
+  </nav>
+</header>
 
-        <!-- ===== HEADER ===== -->
-        <div id="header">
-            <div class="header-inner">
-                <a href="index.html" id="homelink">
-                    <div id="headerlogo">
-                        <img src="images/wingslogo_whitebg.png" id="logo" alt="McMaster AIAA logo">
-                    </div>
-                    <div id="headertext">
-                        <h1>McMaster AIAA Student Branch</h1>
-                        <p>The American Institute of Aeronautics and Astronautics at McMaster</p>
-                    </div>
-                </a>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div id="navbar">
-                    <a href="index.html" class="link">Home</a>
-                    <a href="about.html" class="link">About</a>
-                    <a href="events.html" class="link">Events</a>
-                    <a href="calendar.html" class="link">Calendar</a>
-                    <a href="join.html" class="link">Join</a>
-                </div>
-            </div>
-        </div>
+<aside class="altimeter" aria-hidden="true">
+  <div class="alt-track">
+    <div class="alt-fill"></div>
+    <div class="alt-tick" style="bottom:0%"><span>Ground</span></div>
+    <div class="alt-tick" style="bottom:15%"><span>Cruising altitude<br>12 km</span></div>
+    <div class="alt-tick" style="bottom:50%"><span>K&aacute;rm&aacute;n line<br>100 km</span></div>
+    <div class="alt-tick" style="bottom:100%"><span>Low Earth orbit<br>400 km</span></div>
+    <div class="alt-marker"><div class="alt-readout"><b data-alt>0</b><small>km</small></div></div>
+  </div>
+</aside>
 
+<main id="main">
 
-        <!-- ===== PAGE CONTENT ===== -->
+<section class="page-head">
+  <div class="wrap">
+    <h1><span class="line"><span>Calendar</span></span></h1>
+  </div>
+</section>
 
-        <div class="page-content">
-
-            <div class="container">
-
-                <!-- Calendar Header -->
-
-                <div class="calendar-header">
-
-                    <button id="prev-month" class="calendar-nav" aria-label="Previous month">
-                        &larr;
-                    </button>
-
-                    <h1 id="calendar-month">
-                        September 2026
-                    </h1>
-
-                    <button id="next-month" class="calendar-nav" aria-label="Next month">
-                        &rarr;
-                    </button>
-
-                </div>
-
-
-                <!-- Today Button -->
-
-                <div class="calendar-actions">
-
-                    <button id="today-button" class="today-button">
-                        Today
-                    </button>
-
-                </div>
-
-
-                <!-- Calendar -->
-
-                <div class="calendar">
-
-                    <!-- Weekday Headers -->
-
-                    <div class="calendar-weekdays">
-
-                        <div>Sun</div>
-                        <div>Mon</div>
-                        <div>Tue</div>
-                        <div>Wed</div>
-                        <div>Thu</div>
-                        <div>Fri</div>
-                        <div>Sat</div>
-
-                    </div>
-
-
-                    <!-- Calendar Days -->
-
-                    <div id="calendar-days" class="calendar-days">
-
-                        <!-- Calendar days generated by events.js -->
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ===== EVENT MODAL ===== -->
-
-        <div id="event-modal" class="event-modal">
-
-            <div class="event-modal-content">
-
-                <!-- Close Button -->
-
-                <button id="close-modal" class="close-modal" aria-label="Close event details">
-                    &times;
-                </button>
-
-
-                <!-- Event Name -->
-
-                <h2 id="modal-event-name">
-                    Event Name
-                </h2>
-
-
-                <!-- Event Details -->
-
-                <div class="event-details">
-
-                    <p>
-                        <span class="event-icon">📅</span>
-
-                        <span id="modal-event-date">
-                            Event date
-                        </span>
-                    </p>
-
-
-                    <p>
-                        <span class="event-icon">🕐</span>
-
-                        <span id="modal-event-time">
-                            Event time
-                        </span>
-                    </p>
-
-
-                    <p>
-                        <span class="event-icon">📍</span>
-
-                        <span id="modal-event-location">
-                            Event location
-                        </span>
-                    </p>
-
-                </div>
-
-
-                <!-- Event Description -->
-
-                <p id="modal-event-description" class="modal-description">
-                    Event description
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- ===== FOOTER ===== -->
-
-        <div id="footer">
-            <div class="container footer-inner">
-                <div class="footer-col">
-                    <p>McMaster AIAA</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/mcmasteraiaa/" target="_blank">
-                            <img class="footer-logo" src="images/instagramLogo.png" alt="Instagram">
-                        </a>
-                        <a href="https://www.linkedin.com/company/mcmasteraiaa/" target="_blank">
-                            <img class="footer-logo" src="images/Icon-Linkedin.png" alt="LinkedIn">
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <p>Email: <a target="_blank" href="mailto:mac_aiaa@mcmaster.ca">mac_aiaa@mcmaster.ca</a></p>
-                    <p><a href="join.html">Join us</a></p>
-                </div>
-            </div>
-        </div>
-
+<section class="section" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="cal-bar">
+      <h2 class="cal-title" id="cal-title" aria-live="polite">&nbsp;</h2>
+      <div class="cal-controls">
+        <button class="icon-btn sq" id="cal-prev" aria-label="Previous month">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <button class="icon-btn" id="cal-today">Today</button>
+        <button class="icon-btn sq" id="cal-next" aria-label="Next month">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
     </div>
+    <div class="cal-grid" id="cal-grid" role="grid" aria-labelledby="cal-title"></div>
+    <div class="undated" id="cal-undated" hidden>
+      <h2>This month, dates to be announced</h2>
+      <ul class="rows" id="cal-undated-list"></ul>
+    </div>
+    <noscript><p class="empty">The calendar needs JavaScript. See the <a href="events.html">events page</a> instead.</p></noscript>
+  </div>
+</section>
 
-    <!-- ===== JAVASCRIPT ===== -->
+<dialog class="event-dialog" id="event-dialog" aria-labelledby="ev-title">
+  <h2 id="ev-title">Event</h2>
+  <dl id="ev-meta"></dl>
+  <p id="ev-desc"></p>
+  <button class="btn ghost" id="ev-close" type="button">Close</button>
+</dialog>
 
-    <script src="js/script.js" defer></script>
-    <script src="js/events.js" defer></script>
+</main>
+
+<footer class="footer on-dark">
+  <div class="wrap">
+    <a class="footer-cta" href="join.html">Join us</a>
+    <div class="footer-row">
+      <div>
+        <strong>McMaster AIAA</strong>
+        <p>The American Institute of Aeronautics and Astronautics at McMaster</p>
+      </div>
+      <p>Email: <a class="email" href="mailto:mac_aiaa@mcmaster.ca">mac_aiaa@mcmaster.ca</a></p>
+      <div class="social">
+        <a href="https://www.instagram.com/mcmasteraiaa/" target="_blank" rel="noopener" aria-label="McMaster AIAA on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.linkedin.com/company/mcmasteraiaa/" target="_blank" rel="noopener" aria-label="McMaster AIAA on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3V9.75zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2.05 3.75-2.05 4 0 4.74 2.63 4.74 6.05V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.32-1.96 2.69V21h-4V9.75z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/calendar.js"></script>
 </body>
-
 </html>
