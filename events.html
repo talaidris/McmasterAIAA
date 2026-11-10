@@ -11,6 +11,25 @@
 <link rel="preload" href="fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="images/logo.png">
 <link rel="stylesheet" href="css/styles.css">
+<style>
+.ko-people{margin:1rem 0 0;padding:0;list-style:none;display:grid;gap:.9rem}
+.ko-people li{display:block;padding:0;border:0}
+.ko-people a{font-weight:600}
+.ko-gallery{margin-top:1.6rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.8rem}
+.ko-gallery button{all:unset;box-sizing:border-box;cursor:zoom-in;display:block;aspect-ratio:4/3;overflow:hidden;border-radius:.8rem;background:#dfe7f2}
+.ko-gallery button:focus-visible{outline:3px solid #3179a7;outline-offset:3px}
+.ko-gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.ko-gallery button:hover img{transform:scale(1.05)}
+.ko-alice img{object-position:center 30%}
+.ko-box{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%}
+.ko-box::backdrop{background:rgba(7,17,31,.92)}
+.ko-box[open]{display:grid;place-items:center}
+.ko-box img{max-width:92vw;max-height:88vh;border-radius:.6rem;display:block}
+.ko-box p{margin:.7rem 0 0;color:#fff;text-align:center;font-size:.95rem}
+.ko-box form{position:absolute;top:1rem;right:1rem}
+.ko-box form button{background:#fff;color:#1a3d6d;border:0;border-radius:999px;padding:.5rem 1.1rem;font-weight:600;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.ko-gallery img{transition:none}}
+</style>
 </head>
 <body>
 <div class="curtain" aria-hidden="true"><span>AIAA</span></div>
@@ -57,8 +76,26 @@
   <div class="wrap">
     <ul class="rows">
       <li>
-        <div><p class="when">September 2026</p><h3>Kickoff Event</h3></div>
-        <p>We&rsquo;re launching the academic year with a kickoff event where we will introduce our branch and initiatives. This is your opportunity to meet fellow AIAA members and get an overview of future events and projects.</p>
+        <div><p class="when">September 24, 2026</p><h3>Kickoff Event</h3></div>
+        <div>
+          <p>We hosted our very first kickoff event for the McMaster AIAA Student Branch, welcoming students to hear firsthand perspectives on space exploration and the aerospace industry, while connecting with professionals in the field.</p>
+          <ul class="ko-people">
+            <li><a href="https://www.linkedin.com/in/alice-bowman-63279169/" target="_blank" rel="noopener">Alice Bowman</a>, Mission Operations Manager for NASA&rsquo;s New Horizons mission, took us through the journey of the New Horizons space probe, what lies ahead for the mission, and the challenges of operating a spacecraft billions of kilometres from Earth.</li>
+            <li><a href="https://www.linkedin.com/in/stephen-carnduff-0bb1062a/" target="_blank" rel="noopener">Stephen Carnduff</a>, Technical Expert in Stability &amp; Control at Bombardier, walked us through the supersonic flight-testing program for the Global 8000 and explored why the aircraft had to be pushed beyond Mach 1.</li>
+            <li>We also thank <a href="https://www.linkedin.com/in/walter-gordon-a7849538/" target="_blank" rel="noopener">Walter Gordon</a>, Chairman of the AIAA Niagara Frontier Section and former development manager and engineer with Moog Space and Defense Group, for joining us and helping make this event possible.</li>
+          </ul>
+          <p style="margin-top:1rem">Thank you to our speakers, our executive team, and everyone who came out and helped make our first major event a success. Stay tuned for what&rsquo;s ahead for McMaster AIAA!</p>
+          <div class="ko-gallery" id="ko-gallery">
+            <button type="button" data-full="images/events/kickoff-group.jpg" data-cap="The McMaster AIAA executive team with Walter Gordon, Alice Bowman and Stephen Carnduff"><img src="images/events/kickoff-group.jpg" alt="McMaster AIAA executive team with the three guests beside the AIAA table" loading="lazy"></button>
+            <button type="button" class="ko-alice" data-full="images/events/kickoff-alice.jpg" data-cap="Alice Bowman presenting the New Horizons mission to Pluto"><img src="images/events/kickoff-alice.jpg" alt="Alice Bowman presenting a New Horizons flyby slide" loading="lazy"></button>
+            <button type="button" data-full="images/events/kickoff-stephen.jpg" data-cap="Stephen Carnduff presenting Global 8000 supersonic flight testing"><img src="images/events/kickoff-stephen.jpg" alt="Stephen Carnduff speaking in front of a Bombardier Global 8000 slide" loading="lazy"></button>
+            <button type="button" data-full="images/events/kickoff-audience.jpg" data-cap="Introducing our speakers to a full lecture hall"><img src="images/events/kickoff-audience.jpg" alt="Students in the lecture hall as branch members introduce Alice Bowman" loading="lazy"></button>
+          </div>
+          <dialog class="ko-box" id="ko-box" aria-label="Photo viewer">
+            <div><img alt="" id="ko-img"><p id="ko-cap"></p></div>
+            <form method="dialog"><button>Close</button></form>
+          </dialog>
+        </div>
       </li>
       <li>
         <div><h3>Industry Guest Speakers</h3></div>
@@ -106,5 +143,12 @@
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="vendor/lenis.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+(function(){var g=document.getElementById("ko-gallery"),b=document.getElementById("ko-box");
+if(!g||!b||!b.showModal)return;var i=document.getElementById("ko-img"),c=document.getElementById("ko-cap");
+g.addEventListener("click",function(e){var t=e.target.closest("button");if(!t)return;
+i.src=t.dataset.full;i.alt=t.querySelector("img").alt;c.textContent=t.dataset.cap;b.showModal();});
+b.addEventListener("click",function(e){if(e.target===b||e.target.tagName==="DIV")b.close();});})();
+</script>
 </body>
 </html>
