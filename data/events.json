@@ -27,7 +27,8 @@
       "date": "2026-11-20",
       "time": "3:52 PM - 6:51 PM",
       "location": "TEST TEST TEST",
-      "description": "TEST TEST TEST TEST"
+      "description": "TEST TEST TEST TEST",
+      "hideOnEventsPage": true
     },
     {
       "title": "AIAA Region I Student Conference",
