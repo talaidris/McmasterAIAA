@@ -15,12 +15,19 @@
       "location": "BSB B103",
       "description": "A mini conference to kick off McMaster AIAA. Learn from industry professionals from NASA and Bombardier and hear directly from people working in aerospace."
     },
-        {
+    {
       "title": "Workshop 01: Foamboard Glider",
       "date": "2026-11-03",
       "time": "6:30 PM - 8:30 PM",
       "location": "JHE A102",
       "description": "Learn the basics of aerodynamics, design and build your own glider, and put it to the test in a flight-distance competition. No experience needed. Limited spots, so register through the link in our Instagram bio."
+    },
+    {
+      "title": "test event",
+      "date": "2026-11-20",
+      "time": "3:52 PM - 6:51 PM",
+      "location": "TEST TEST TEST",
+      "description": "TEST TEST TEST TEST"
     },
     {
       "title": "AIAA Region I Student Conference",
