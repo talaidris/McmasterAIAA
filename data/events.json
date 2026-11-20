@@ -50,20 +50,6 @@
       "hideOnEventsPage": true
     },
     {
-      "title": "test event",
-      "date": "2026-11-21",
-      "time": "1:11 AM - 1:11 AM",
-      "location": "test location",
-      "description": "test description calendar",
-      "details": "test description events page\n\n- test list\n\n- test [link](example.com)\n\ntest faefdgaeggnl jdn;kjdg  faesdfhls dk,fd[g sdfgvkjdsf gghdfkgh fdkjgh hdkjfsh gsdfhglskjdf\nifjslfjlsdf\nfsfgsgsg\n\ndfgdf",
-      "images": [
-        {
-          "src": "images/events/test-event-mwocelql1.jpg",
-          "caption": "test image"
-        }
-      ]
-    },
-    {
       "title": "AIAA Region I Student Conference",
       "month": "2027-04",
       "description": "Submit an abstract, present your research, and network with aerospace students, engineering professionals, and industry leaders.",
