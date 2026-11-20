@@ -10,7 +10,7 @@
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#0b2a5b">
   <link rel="icon" href="images/logo.png">
-  <link rel="stylesheet" href="css/admin.css?v=3">
+  <link rel="stylesheet" href="css/admin.css">
   <script>
     /* If anything goes wrong, show it on the page instead of leaving a blank screen. */
     try { sessionStorage.removeItem("aiaa-t"); } catch (e) {}
@@ -75,10 +75,12 @@
 
           <label for="f-details">Full write-up for the Events page <span class="ad-hint">(optional)</span></label>
           <textarea id="f-details" rows="7" maxlength="6000"></textarea>
-          <p class="ad-note">Leave a blank line between paragraphs. Start lines with “- ” to make a bullet list. Write
-            [link text](https://example.com) to add a link. If you fill this in, the Events page shows it exactly as
-            written (add the time and place yourself if you want them); if you leave it empty, the Events page shows the
-            short description plus the time and location.</p>
+          <p class="ad-note">Formatting: a blank line starts a new paragraph. Start a line with “- ” for a bullet point.
+            Write [link text](https://example.com) for a link (the part in round brackets is the address). **Double stars** make bold text.
+            If you fill this in, the Events page shows it exactly as written, so add the time and place yourself; if you leave it empty,
+            the Events page shows the short description plus the time and location.</p>
+          <div class="ad-preview-label">Preview</div>
+          <div id="f-preview" class="ad-preview" aria-live="polite"></div>
 
           <label for="f-files">Photos <span class="ad-hint">(optional, shown on the Events page)</span></label>
           <input id="f-files" type="file" accept="image/*" multiple>
@@ -102,7 +104,8 @@
       </section>
     </div>
   </main>
-  <script src="js/admin.js?v=3"></script>
+  <script src="js/writeup.js"></script>
+  <script src="js/admin.js"></script>
 </body>
 
 </html>

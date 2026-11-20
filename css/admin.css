@@ -32,3 +32,9 @@ fieldset{border:0;padding:0;margin:.9rem 0 0}legend{font-weight:600;font-size:.9
 .ad-imgs input{padding:.45rem .6rem;font-size:.9rem}
 .ad-imgs .ad-img-btns{grid-column:1 / -1;display:flex;gap:.4rem;flex-wrap:wrap}
 .ad-imgs .ad-ghost{padding:.25rem .7rem;font-size:.8rem}
+
+.ad-preview-label{margin:.9rem 0 .3rem;font-weight:600;font-size:.9rem}
+.ad-preview{border:1px dashed var(--line);border-radius:.6rem;padding:.75rem .9rem;background:#fafcff;color:var(--ink)}
+.ad-preview p{margin:0 0 .6rem}.ad-preview p:last-child,.ad-preview ul:last-child{margin-bottom:0}
+.ad-preview ul{margin:0 0 .6rem;padding-left:1.3rem;list-style:disc}.ad-preview li{margin:0 0 .25rem}
+.ad-preview a{color:var(--navy);font-weight:600}.ad-empty{color:var(--muted)}

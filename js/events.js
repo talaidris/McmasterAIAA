@@ -12,32 +12,6 @@
   } catch (_) { /* leave the permanent items in place */ }
 
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
-  const safeUrl = (u) => /^https?:\/\//i.test(u) ? u : null;
-
-  /* "text with [a link](https://example.com)" -> text and <a> nodes */
-  function inline(parent, text) {
-    const re = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
-    let last = 0, m;
-    while ((m = re.exec(text))) {
-      if (m.index > last) parent.appendChild(document.createTextNode(text.slice(last, m.index)));
-      const a = el("a", "", m[1]); a.href = safeUrl(m[2]); a.target = "_blank"; a.rel = "noopener";
-      parent.appendChild(a); last = re.lastIndex;
-    }
-    if (last < text.length) parent.appendChild(document.createTextNode(text.slice(last)));
-  }
-
-  /* Blank line = new paragraph. A block where every line starts with "- " = bullet list. */
-  function writeUp(parent, details) {
-    String(details).replace(/\r/g, "").split(/\n{2,}/).map((b) => b.trim()).filter(Boolean).forEach((block) => {
-      const lines = block.split("\n");
-      if (lines.every((l) => /^-\s+/.test(l))) {
-        const ul = el("ul", "ko-people");
-        lines.forEach((l) => { const li = document.createElement("li"); inline(li, l.replace(/^-\s+/, "")); ul.appendChild(li); });
-        parent.appendChild(ul);
-      } else { const p = document.createElement("p"); inline(p, lines.join(" ")); parent.appendChild(p); }
-    });
-  }
-
   function gallery(parent, ev) {
     const imgs = (ev.images || []).filter((i) => i && /^(images\/|https?:\/\/)/.test(i.src || ""));
     if (!imgs.length) return;
@@ -73,7 +47,7 @@
     left.append(el("p", "when", whenText(ev)), el("h3", "", ev.title));
     const right = document.createElement("div");
     if (ev.details) {
-      right.className = "ev-details"; writeUp(right, ev.details);
+      right.className = "ev-details"; window.renderWriteUp(right, ev.details, { plainList: ev.listStyle === "plain" });
     } else {
       if (ev.description) right.appendChild(el("p", "", ev.description));
       const meta = [ev.time, ev.location].filter(Boolean).join(" · ");

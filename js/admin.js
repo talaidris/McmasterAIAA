@@ -1,3 +1,10 @@
+/* Admin: unlock with the password, then add/edit/delete events in data/events.json.
+   HOW IT WORKS (no server needed):
+   - data/admin-config.json holds a GitHub access token ENCRYPTED with the admin password
+     (AES-256-GCM, PBKDF2 600k rounds). The password itself is never stored anywhere.
+   - A correct password decrypts the token in memory only. A wrong one simply fails to decrypt.
+   - Publishing commits data/events.json to the repo through the GitHub API; GitHub Pages then redeploys.
+   Everything the page shows is inserted with textContent, never innerHTML. */
 (() => {
   const $ = (id) => document.getElementById(id);
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
@@ -94,6 +101,14 @@
   const to24 = (s) => { const m = /^(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(s || ""); if (!m) return ""; let h = Number(m[1]) % 12; if (m[3].toUpperCase() === "PM") h += 12; return String(h).padStart(2, "0") + ":" + m[2]; };
 
 
+  /* ---------- Write-up preview ---------- */
+  function renderPreview() {
+    const box = $("f-preview"); box.textContent = "";
+    if (f.details.value.trim()) window.renderWriteUp(box, f.details.value);
+    else { const p = el("p", "ad-empty", "Nothing to preview yet."); box.appendChild(p); }
+  }
+  f.details.addEventListener("input", renderPreview);
+
   /* ---------- Photos ---------- */
   let imgs = []; // {src?, file?, url, caption, alt?, focus?}
   const MAX_IMGS = 8, MAX_PX = 1600;
@@ -154,14 +169,14 @@
   }
 
   function resetForm() {
-    editing = -1; $("ad-form").reset(); syncKind(); imgs.forEach((i) => i.file && URL.revokeObjectURL(i.url)); imgs = []; renderImgs();
+    editing = -1; $("ad-form").reset(); syncKind(); renderPreview(); imgs.forEach((i) => i.file && URL.revokeObjectURL(i.url)); imgs = []; renderImgs();
     $("ad-form-title").textContent = "Add an event"; $("f-save").textContent = "Publish event"; $("f-cancel").hidden = true;
   }
   $("f-cancel").addEventListener("click", () => { resetForm(); say($("ad-msg"), ""); });
 
   function startEdit(i) {
     const ev = events[i]; editing = i;
-    f.title.value = ev.title || ""; f.loc.value = ev.location || ""; f.desc.value = ev.description || ""; f.details.value = ev.details || "";
+    f.title.value = ev.title || ""; f.loc.value = ev.location || ""; f.desc.value = ev.description || ""; f.details.value = ev.details || ""; renderPreview();
     imgs = (ev.images || []).map((i) => ({ ...i, url: i.src }));  renderImgs(); f.hide.checked = !!ev.hideOnEventsPage;
     document.querySelector(`input[name="kind"][value="${ev.date ? "date" : "month"}"]`).checked = true; syncKind();
     f.date.value = ev.date || ""; f.month.value = ev.month || "";
