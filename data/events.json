@@ -54,7 +54,7 @@
       "time": "1:11 AM - 1:11 AM",
       "location": "test location",
       "description": "test description calendar",
-      "details": "test description events page\n- test list\n- test link[example.com]\ntest faefdgaeggnl jdn;kjdg  faesdfhls dk,fd[g sdfgvkjdsf gghdfkgh fdkjgh hdkjfsh gsdfhglskjdf",
+      "details": "test description events page\n\n- test list\n\n- test link[example.com]\n\ntest faefdgaeggnl jdn;kjdg  faesdfhls dk,fd[g sdfgvkjdsf gghdfkgh fdkjgh hdkjfsh gsdfhglskjdf",
       "images": [
         {
           "src": "images/events/test-event-mwocelql1.jpg",
