@@ -23,20 +23,6 @@
       "description": "Learn the basics of aerodynamics, design and build your own glider, and put it to the test in a flight-distance competition. No experience needed. Limited spots, so register through the link in our Instagram bio."
     },
     {
-      "title": "test event both",
-      "date": "2026-11-20",
-      "time": "9:59 PM - 11:01 PM",
-      "location": "TEST LOCATION",
-      "description": "test calendar desc",
-      "details": "test events desc\n- test list\n[example.com]",
-      "images": [
-        {
-          "src": "images/events/test-event-calendar-only-mwo7nxkc1.jpg",
-          "caption": "test image"
-        }
-      ]
-    },
-    {
       "title": "AIAA Region I Student Conference",
       "month": "2027-04",
       "description": "Submit an abstract, present your research, and network with aerospace students, engineering professionals, and industry leaders."
