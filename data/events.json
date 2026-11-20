@@ -55,7 +55,6 @@
       "location": "test location",
       "description": "test description calendar",
       "details": "test description events page\n- test list\n- test link[example.com]\ntest faefdgaeggnl jdn;kjdg  faesdfhls dk,fd[g sdfgvkjdsf gghdfkgh fdkjgh hdkjfsh gsdfhglskjdf",
-      "hideOnEventsPage": true,
       "images": [
         {
           "src": "images/events/test-event-mwocelql1.jpg",
