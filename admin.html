@@ -7,12 +7,29 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="referrer" content="no-referrer">
   <title>McMaster AIAA | Admin</title>
+  <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#0b2a5b">
   <link rel="icon" href="images/logo.png">
-  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/admin.css?v=3">
+  <script>
+    /* If anything goes wrong, show it on the page instead of leaving a blank screen. */
+    try { sessionStorage.removeItem("aiaa-t"); } catch (e) {}
+    function adShowError(msg) {
+      var box = document.getElementById("ad-fatal");
+      if (!box) {
+        box = document.createElement("pre"); box.id = "ad-fatal";
+        box.style.cssText = "white-space:pre-wrap;margin:1rem;padding:1rem;border:2px solid #b42318;border-radius:.6rem;background:#fff;color:#b42318;font:14px/1.4 monospace";
+        (document.body || document.documentElement).appendChild(box);
+      }
+      box.textContent += msg + "\n";
+    }
+    window.addEventListener("error", function (e) { adShowError("Page error: " + e.message + (e.filename ? " (" + e.filename.split("/").pop() + ":" + e.lineno + ")" : "")); });
+    window.addEventListener("unhandledrejection", function (e) { adShowError("Page error: " + (e.reason && e.reason.message || e.reason)); });
+  </script>
 </head>
 
 <body>
+  <noscript><p style="margin:1rem;font:16px sans-serif">The admin page needs JavaScript turned on.</p></noscript>
   <main class="ad">
     <header class="ad-top">
       <a href="index.html" class="ad-home">&larr; Back to site</a>
@@ -85,7 +102,7 @@
       </section>
     </div>
   </main>
-  <script src="js/admin.js"></script>
+  <script src="js/admin.js?v=3"></script>
 </body>
 
 </html>
