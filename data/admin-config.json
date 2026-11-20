@@ -1,0 +1,9 @@
+{
+  "repo": "talaidris/McmasterAIAA",
+  "branch": "main",
+  "path": "data/events.json",
+  "iter": 600000,
+  "salt": "PbctRfxoBONtAhtL7crSSg==",
+  "iv": "DyZ1suL1HVbvmewB",
+  "ct": "181WsUqYci4iVZGdeWfviZB6Tr0kdwa3zyuUvegxsTuzK6T2FHM7o8PYbWxKMl2Kx+PXXmcD00DlafgGfYtk+L9xDBqpRM4z1ypF915udpMx+TTlReLx+KwFFne3Q8TgGiS3y8dwAtgYAuBCAw=="
+}

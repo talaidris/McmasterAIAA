@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>McMaster AIAA | Admin</title>
+  <meta name="theme-color" content="#0b2a5b">
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+  <main class="ad">
+    <header class="ad-top">
+      <a href="index.html" class="ad-home">&larr; Back to site</a>
+      <button type="button" id="ad-lock" class="ad-ghost" hidden>Lock</button>
+    </header>
+
+    <section id="ad-login" class="ad-card">
+      <h1>Admin</h1>
+      <form id="ad-login-form" autocomplete="off">
+        <label for="ad-pw">Password</label>
+        <input id="ad-pw" type="password" autocomplete="current-password" required>
+        <button type="submit" class="ad-btn">Unlock</button>
+        <p id="ad-login-msg" class="ad-msg" role="alert"></p>
+      </form>
+    </section>
+
+    <div id="ad-app" hidden>
+      <section class="ad-card">
+        <h1 id="ad-form-title">Add an event</h1>
+        <form id="ad-form" autocomplete="off" novalidate>
+          <label for="f-title">Title *</label>
+          <input id="f-title" maxlength="120" required>
+
+          <fieldset class="ad-kind">
+            <legend>When</legend>
+            <label><input type="radio" name="kind" value="date" checked> Specific day</label>
+            <label><input type="radio" name="kind" value="month"> Month only (date to be announced)</label>
+          </fieldset>
+
+          <div id="f-date-wrap"><label for="f-date">Date *</label><input id="f-date" type="date"></div>
+          <div id="f-month-wrap" hidden><label for="f-month">Month *</label><input id="f-month" type="month"></div>
+
+          <div class="ad-row">
+            <div><label for="f-start">Start time</label><input id="f-start" type="time"></div>
+            <div><label for="f-end">End time</label><input id="f-end" type="time"></div>
+          </div>
+
+          <label for="f-loc">Location</label>
+          <input id="f-loc" maxlength="120">
+
+          <label for="f-desc">Short description <span class="ad-hint">(shown on the calendar)</span></label>
+          <textarea id="f-desc" rows="3" maxlength="700"></textarea>
+
+          <label for="f-details">Full write-up for the Events page <span class="ad-hint">(optional)</span></label>
+          <textarea id="f-details" rows="7" maxlength="6000"></textarea>
+          <p class="ad-note">Leave a blank line between paragraphs. Start lines with “- ” to make a bullet list. Write
+            [link text](https://example.com) to add a link. If you fill this in, the Events page shows it exactly as
+            written (add the time and place yourself if you want them); if you leave it empty, the Events page shows the
+            short description plus the time and location.</p>
+
+          <label for="f-files">Photos <span class="ad-hint">(optional, shown on the Events page)</span></label>
+          <input id="f-files" type="file" accept="image/*" multiple>
+          <ul id="f-imgs" class="ad-imgs"></ul>
+
+          <label class="ad-check"><input type="checkbox" id="f-hide"> Show on the calendar only (hide from the Events
+            page)</label>
+
+          <div class="ad-actions">
+            <button type="submit" class="ad-btn" id="f-save">Publish event</button>
+            <button type="button" class="ad-ghost" id="f-cancel" hidden>Cancel edit</button>
+          </div>
+          <p id="ad-msg" class="ad-msg" role="status"></p>
+        </form>
+      </section>
+
+      <section class="ad-card">
+        <h2>All events</h2>
+        <ul id="ad-list" class="ad-list"></ul>
+        <p class="ad-note">Changes go live on the site about a minute after you publish.</p>
+      </section>
+    </div>
+  </main>
+  <script src="js/admin.js"></script>
+</body>
+
+</html>

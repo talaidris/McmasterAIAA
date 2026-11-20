@@ -1,31 +1,58 @@
 {
-  "_howTo": "Edit this file to update the Calendar. An event with a \"date\" (YYYY-MM-DD) shows on that day. An event with only a \"month\" (YYYY-MM) is listed under 'dates to be announced' for that month. \"time\", \"location\" and \"description\" are optional.",
+  "_howTo": "Edit this file, or use the admin page (the small dot at the bottom of the site), to update the Calendar and Events page. \"date\" (YYYY-MM-DD) puts an event on that day; \"month\" (YYYY-MM) lists it under dates to be announced. \"time\", \"location\" and \"description\" are optional (the description is the short text on the calendar). Optional extras for the Events page: \"details\" (the full write-up: blank line between paragraphs, lines starting with \"- \" make a list, [text](https://link) makes a link) and \"images\" (a list of {src, caption, alt}). If \"details\" is set the Events page shows it exactly as written; otherwise it shows the description plus time and location. Add \"hideOnEventsPage\": true to keep an event on the calendar only.",
   "events": [
     {
       "title": "ClubFest",
       "date": "2026-09-14",
       "time": "4:30 PM - 7:30 PM",
       "location": "Booth 26, JHE Field",
-      "description": "Come find McMaster AIAA at ClubFest. Check out what we have planned for the year and meet some of the people behind McMaster AIAA."
+      "description": "Come find McMaster AIAA at ClubFest. Check out what we have planned for the year and meet some of the people behind McMaster AIAA.",
+      "hideOnEventsPage": true
     },
     {
       "title": "Kickoff Event",
       "date": "2026-09-24",
       "time": "4:00 PM - 6:30 PM (doors open 3:45 PM)",
       "location": "BSB B103",
-      "description": "A mini conference to kick off McMaster AIAA. Learn from industry professionals from NASA and Bombardier and hear directly from people working in aerospace."
+      "description": "A mini conference to kick off McMaster AIAA. Learn from industry professionals from NASA and Bombardier and hear directly from people working in aerospace.",
+      "details": "We hosted our very first kickoff event for the McMaster AIAA Student Branch, welcoming students to hear firsthand perspectives on space exploration and the aerospace industry, while connecting with professionals in the field.\n\n- [Alice Bowman](https://www.linkedin.com/in/alice-bowman-63279169/), Mission Operations Manager for NASA’s New Horizons mission, took us through the journey of the New Horizons space probe, what lies ahead for the mission, and the challenges of operating a spacecraft billions of kilometres from Earth.\n- [Stephen Carnduff](https://www.linkedin.com/in/stephen-carnduff-0bb1062a/), Technical Expert in Stability & Control at Bombardier, walked us through the supersonic flight-testing program for the Global 8000 and explored why the aircraft had to be pushed beyond Mach 1.\n- We also thank [Walter Gordon](https://www.linkedin.com/in/walter-gordon-a7849538/), Chairman of the AIAA Niagara Frontier Section and former development manager and engineer with Moog Space and Defense Group, for joining us and helping make this event possible.\n\nThank you to our speakers, our executive team, and everyone who came out and helped make our first major event a success. Stay tuned for what’s ahead for McMaster AIAA!",
+      "images": [
+        {
+          "src": "images/events/kickoff-group.jpg",
+          "caption": "The McMaster AIAA executive team with Walter Gordon, Alice Bowman and Stephen Carnduff",
+          "alt": "McMaster AIAA executive team with the three guests beside the AIAA table"
+        },
+        {
+          "src": "images/events/kickoff-alice.jpg",
+          "caption": "Alice Bowman presenting the New Horizons mission to Pluto",
+          "alt": "Alice Bowman presenting a New Horizons flyby slide",
+          "focus": "center 30%"
+        },
+        {
+          "src": "images/events/kickoff-stephen.jpg",
+          "caption": "Stephen Carnduff presenting Global 8000 supersonic flight testing",
+          "alt": "Stephen Carnduff speaking in front of a Bombardier Global 8000 slide"
+        },
+        {
+          "src": "images/events/kickoff-audience.jpg",
+          "caption": "Introducing our speakers to a full lecture hall",
+          "alt": "Students in the lecture hall as branch members introduce Alice Bowman"
+        }
+      ]
     },
     {
       "title": "Workshop 01: Foamboard Glider",
       "date": "2026-11-03",
       "time": "6:30 PM - 8:30 PM",
       "location": "JHE A102",
-      "description": "Learn the basics of aerodynamics, design and build your own glider, and put it to the test in a flight-distance competition. No experience needed. Limited spots, so register through the link in our Instagram bio."
+      "description": "Learn the basics of aerodynamics, design and build your own glider, and put it to the test in a flight-distance competition. No experience needed. Limited spots, so register through the link in our Instagram bio.",
+      "hideOnEventsPage": true
     },
     {
       "title": "AIAA Region I Student Conference",
       "month": "2027-04",
-      "description": "Submit an abstract, present your research, and network with aerospace students, engineering professionals, and industry leaders."
+      "description": "Submit an abstract, present your research, and network with aerospace students, engineering professionals, and industry leaders.",
+      "hideOnEventsPage": true
     }
   ]
 }

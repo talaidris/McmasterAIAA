@@ -1270,3 +1270,69 @@ a.sponsor-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba
 /* Boluwatiwi: show the top of his head, and keep his name on one line */
 .person-boluwatiwi-mafikuyomi .org-photo img { object-position: center 0%; }
 .person-boluwatiwi-mafikuyomi .org-name { font-size: 0.78rem; letter-spacing: -0.01em; }
+/* ==========================================================================
+   Mobile layout: Meet the Team stacks into one column (nothing side-by-side)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .org-chart { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; width: 100%; max-width: 100%; overflow: visible; }
+
+  .org-leadership,
+  .org-advisor-area,
+  .org-advisor-row,
+  .org-secretaries { display: flex !important; flex-direction: column !important; align-items: center; gap: 1.25rem; width: 100%; }
+
+  .org-chair, .org-vice-chair, .org-advisor, .org-secretary,
+  .org-advisor-area .org-advisor, .org-departments .org-person {
+    width: 100% !important; max-width: 20rem !important; margin: 0 !important;
+  }
+  .org-vice-chair::before, .org-advisor-area::before, .org-advisor-area::after { display: none !important; }
+
+  .org-departments { display: flex !important; flex-direction: column; align-items: center; gap: 2rem !important; width: 100%; }
+  .org-departments::before, .org-branch::before, .org-branch::after,
+  .org-departments .org-branch::after { display: none !important; }
+  .org-departments .org-branch { width: 100%; margin: 0 !important; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .org-department-title { text-align: center; width: 100%; }
+  .org-people { display: flex !important; flex-direction: column; align-items: center; gap: 1rem; width: 100%; }
+  .org-branch .org-person { margin-top: 0 !important; }
+  .person-danah-shaath .org-role { white-space: normal; }
+}
+
+/* ==========================================================================
+   Smaller type: footer "Join us" and the mobile menu were oversized
+   ========================================================================== */
+.footer-cta { font-size: clamp(3rem, 11vw, 9rem); }
+@media (max-width: 1180px) {
+  .nav a, .nav .nav-join { font-size: clamp(2rem, 8vw, 3.25rem); }
+  .nav { gap: 0.7rem; }
+}
+@media (max-width: 700px) {
+  .footer-cta { font-size: clamp(2.6rem, 14vw, 4rem); }
+  .footer-row strong { font-size: 1.3rem; }
+  .brand-text strong { font-size: 1.25rem; }
+}
+@media (max-width: 700px) {
+  .footer-cta { font-size: clamp(2.2rem, 11vw, 3.4rem); line-height: 0.95; }
+  .page-head h1, .page-head h1 .long, h1.long { font-size: clamp(2.4rem, 11.5vw, 3.4rem); }
+  .hero h1 { font-size: clamp(2.8rem, 12.5vw, 4rem); }
+  .section-title { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+}
+
+/* Admin entrance: a tiny, low-contrast dot at the very bottom of the footer */
+.admin-link { display: inline-block; margin-top: 1.5rem; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: inherit; opacity: 0.18; text-decoration: none; }
+.admin-link:hover, .admin-link:focus-visible { opacity: 0.6; }
+
+/* Department photos (Projects, Web, Events, etc.): same 4:5 portrait shape as the branches above,
+   so heads and shoulders are no longer cut off. */
+.org-departments .org-photo { height: auto; aspect-ratio: 4 / 5; }
+@media (max-width: 900px) {
+  .org-departments .org-person { max-width: 16rem !important; }
+}
+
+/* Sub-branch (department) photos: square, same ratio as the chair, vice chairs and secretaries */
+.org-departments .org-photo { height: auto; aspect-ratio: 1 / 1; }
+
+/* Keep "Meet the Team" on one line in the desktop nav */
+@media (min-width: 1181px) {
+  .nav a { white-space: nowrap; }
+  .nav { gap: clamp(0.8rem, 1.6vw, 2.2rem); }
+}
