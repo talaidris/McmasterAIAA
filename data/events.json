@@ -2,11 +2,6 @@
   "_howTo": "Edit this file, or use the admin page (the small dot at the bottom of the site), to update the Calendar and Events page. \"date\" (YYYY-MM-DD) puts an event on that day; \"month\" (YYYY-MM) lists it under dates to be announced. \"time\", \"location\" and \"description\" are optional (the description is the short text on the calendar). Optional extras for the Events page: \"details\" (the full write-up: blank line between paragraphs, lines starting with \"- \" make a list, [text](https://link) makes a link, **bold** makes bold text) and \"images\" (a list of {src, caption, alt}). If \"details\" is set the Events page shows it exactly as written; otherwise it shows the description plus time and location. Add \"hideOnEventsPage\": true to keep an event on the calendar only.",
   "events": [
     {
-      "title": "test event",
-      "date": "2026-09-09",
-      "description": "test event"
-    },
-    {
       "title": "ClubFest",
       "date": "2026-09-14",
       "time": "4:30 PM - 7:30 PM",
