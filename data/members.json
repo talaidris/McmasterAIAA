@@ -38,7 +38,7 @@
     }
   ],
   "departments": [
-    {
+        {
       "name": "Projects",
       "members": [
         {
@@ -54,6 +54,20 @@
           "program": "Eng Phys, Year 3",
           "photo": "images/members/lucas.jpeg",
           "linkedin": "https://www.linkedin.com/in/lucas-cherian/"
+        },
+        {
+          "name": "Kiran Suresh",
+          "role": "Project Lead",
+          "program": "Mech Eng, Year 3",
+          "photo": "images/members/kiran.jpeg",
+          "linkedin": "https://www.linkedin.com/in/kiran-suresh-17a685291/"
+        },
+        {
+          "name": "Daniel Wen",
+          "role": "Project Lead",
+          "program": "Eng Phys and Society, Year 3",
+          "photo": "images/members/daniel.jpeg",
+          "linkedin": "https://www.linkedin.com/in/wen-daniel/"
         }
       ]
     },
