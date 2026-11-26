@@ -46,8 +46,14 @@
       "date": "2026-11-03",
       "time": "6:30 PM - 8:30 PM",
       "location": "JHE A102",
-      "description": "Learn the basics of aerodynamics, design and build your own glider, and put it to the test in a flight-distance competition. No experience needed. Limited spots, so register through the link in our Instagram bio.",
-      "details": "Learn and explore the fundamentals of aerodynamics, incuding lift, drag, stability, and wing design! \n\nWork in teams of 3-4 to design and construct your own foamboard glider. Experiment with different wing shapes, stabilizer designs, and placements with a foamboard fuselage!\n\nPut your glider to the test in a flight-distance competition! See how your wing designs perform and compete for the longest flight.\n\nNo experience needed!"
+      "description": "Learn the basics of aerodynamics, design and build your own glider, and put it to the test in a flight-distance competition. No experience needed!",
+      "details": "Learn and explore the fundamentals of aerodynamics, incuding lift, drag, stability, and wing design! \n\nWork in teams of 3-4 to design and construct your own foamboard glider. Experiment with different wing shapes, stabilizer designs, and placements with a foamboard fuselage!\n\nPut your glider to the test in a flight-distance competition! See how your wing designs perform and compete for the longest flight.\n\nNo experience needed!",
+      "images": [
+        {
+          "caption": "Foamboard gliders",
+          "src": "images/events/workshop-01-foamboard-glider-mwy0cvmm1.jpg"
+        }
+      ]
     },
     {
       "title": "Aerospace Trivia Night",
