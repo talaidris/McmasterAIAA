@@ -13,6 +13,7 @@
   function safeUrl(u) {
     u = String(u).trim();
     if (/^(https?:\/\/|mailto:)/i.test(u)) return u;
+    if (/^[\w\/-]+\.html?(#[\w-]*)?$/i.test(u)) return u;          // a page on this site, e.g. sponsorship.html
     if (/^[\w-]+(\.[\w-]+)+([\/?#]\S*)?$/.test(u)) return "https://" + u;
     return null;
   }
@@ -21,7 +22,7 @@
     var href = safeUrl(url);
     if (!href) { parent.appendChild(document.createTextNode(label)); return; }
     var a = el("a", "", label); a.href = href;
-    if (!/^mailto:/i.test(href)) { a.target = "_blank"; a.rel = "noopener"; }
+    if (/^https?:/i.test(href)) { a.target = "_blank"; a.rel = "noopener"; }
     parent.appendChild(a);
   }
 
@@ -39,6 +40,9 @@
     }
     if (last < text.length) parent.appendChild(document.createTextNode(text.slice(last)));
   }
+
+  /* One line of text with links and **bold**, for places that are not a full write-up (e.g. project highlights). */
+  window.renderInline = inline;
 
   /* opts.plainList: lists with no bullet markers (the look of the Kickoff recap) */
   window.renderWriteUp = function (parent, text, opts) {

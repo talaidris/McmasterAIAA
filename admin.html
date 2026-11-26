@@ -47,61 +47,115 @@
     </section>
 
     <div id="ad-app" hidden>
-      <section class="ad-card">
-        <h1 id="ad-form-title">Add an event</h1>
-        <form id="ad-form" autocomplete="off" novalidate>
-          <label for="f-title">Title *</label>
-          <input id="f-title" maxlength="120" required>
+      <div class="ad-tabs" role="tablist" aria-label="What to edit">
+        <button type="button" role="tab" id="tab-events" aria-controls="panel-events" aria-selected="true">Events</button>
+        <button type="button" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="false">Projects</button>
+      </div>
 
-          <fieldset class="ad-kind">
-            <legend>When</legend>
-            <label><input type="radio" name="kind" value="date" checked> Specific day</label>
-            <label><input type="radio" name="kind" value="month"> Month only (date to be announced)</label>
-          </fieldset>
+      <!-- ===================== EVENTS ===================== -->
+      <div id="panel-events" role="tabpanel" aria-labelledby="tab-events">
+        <section class="ad-card">
+          <h1 id="ad-form-title">Add an event</h1>
+          <form id="ad-form" autocomplete="off" novalidate>
+            <label for="f-title">Title *</label>
+            <input id="f-title" maxlength="120" required>
 
-          <div id="f-date-wrap"><label for="f-date">Date *</label><input id="f-date" type="date"></div>
-          <div id="f-month-wrap" hidden><label for="f-month">Month *</label><input id="f-month" type="month"></div>
+            <fieldset class="ad-kind">
+              <legend>When</legend>
+              <label><input type="radio" name="kind" value="date" checked> Specific day</label>
+              <label><input type="radio" name="kind" value="month"> Month only (date to be announced)</label>
+            </fieldset>
 
-          <div class="ad-row">
-            <div><label for="f-start">Start time</label><input id="f-start" type="time"></div>
-            <div><label for="f-end">End time</label><input id="f-end" type="time"></div>
-          </div>
+            <div id="f-date-wrap"><label for="f-date">Date *</label><input id="f-date" type="date"></div>
+            <div id="f-month-wrap" hidden><label for="f-month">Month *</label><input id="f-month" type="month"></div>
 
-          <label for="f-loc">Location</label>
-          <input id="f-loc" maxlength="120">
+            <div class="ad-row">
+              <div><label for="f-start">Start time</label><input id="f-start" type="time"></div>
+              <div><label for="f-end">End time</label><input id="f-end" type="time"></div>
+            </div>
 
-          <label for="f-desc">Short description <span class="ad-hint">(shown on the calendar)</span></label>
-          <textarea id="f-desc" rows="3" maxlength="700"></textarea>
+            <label for="f-loc">Location</label>
+            <input id="f-loc" maxlength="120" placeholder="e.g. JHE A102">
 
-          <label for="f-details">Full write-up for the Events page <span class="ad-hint">(optional)</span></label>
-          <textarea id="f-details" rows="7" maxlength="6000"></textarea>
-          <p class="ad-note">Formatting: a blank line starts a new paragraph. Start a line with “- ” for a bullet point.
-            Write [link text](https://example.com) for a link (the part in round brackets is the address). **Double stars** make bold text.
-            If you fill this in, the Events page shows it exactly as written, so add the time and place yourself; if you leave it empty,
-            the Events page shows the short description plus the time and location.</p>
-          <div class="ad-preview-label">Preview</div>
-          <div id="f-preview" class="ad-preview" aria-live="polite"></div>
+            <label for="f-desc">Short description <span class="ad-hint">(shown on the calendar)</span></label>
+            <textarea id="f-desc" rows="3" maxlength="700"></textarea>
 
-          <label for="f-files">Photos <span class="ad-hint">(optional, shown on the Events page)</span></label>
-          <input id="f-files" type="file" accept="image/*" multiple>
-          <ul id="f-imgs" class="ad-imgs"></ul>
+            <label for="f-details">Full write-up for the Events page <span class="ad-hint">(optional)</span></label>
+            <textarea id="f-details" rows="7" maxlength="6000"></textarea>
+            <p class="ad-note">Formatting: a blank line starts a new paragraph. Start a line with “- ” for a bullet point.
+              Write [link text](https://example.com) for a link (the part in round brackets is the address). **Double stars** make bold text.
+              If you fill this in, the Events page shows it exactly as written, so add the time and place yourself; if you leave it empty,
+              the Events page shows the short description plus the time and location.</p>
+            <div class="ad-preview-label">Preview</div>
+            <div id="f-preview" class="ad-preview" aria-live="polite"></div>
 
-          <label class="ad-check"><input type="checkbox" id="f-hide"> Show on the calendar only (hide from the Events
-            page)</label>
+            <label for="f-files">Photos <span class="ad-hint">(optional, shown on the Events page)</span></label>
+            <input id="f-files" type="file" accept="image/*" multiple>
+            <ul id="f-imgs" class="ad-imgs"></ul>
 
-          <div class="ad-actions">
-            <button type="submit" class="ad-btn" id="f-save">Publish event</button>
-            <button type="button" class="ad-ghost" id="f-cancel" hidden>Cancel edit</button>
-          </div>
-          <p id="ad-msg" class="ad-msg" role="status"></p>
-        </form>
-      </section>
+            <label class="ad-check"><input type="checkbox" id="f-hide"> Show on the calendar only (hide from the Events page)</label>
 
-      <section class="ad-card">
-        <h2>All events</h2>
-        <ul id="ad-list" class="ad-list"></ul>
-        <p class="ad-note">Changes go live on the site about a minute after you publish.</p>
-      </section>
+            <div class="ad-actions">
+              <button type="submit" class="ad-btn" id="f-save">Publish event</button>
+              <button type="button" class="ad-ghost" id="f-cancel" hidden>Cancel edit</button>
+            </div>
+            <p id="ad-msg" class="ad-msg" role="status"></p>
+          </form>
+        </section>
+
+        <section class="ad-card">
+          <h2>All events</h2>
+          <ul id="ad-list" class="ad-list"></ul>
+          <p class="ad-note">Changes go live on the site about a minute after you publish.</p>
+        </section>
+      </div>
+
+      <!-- ===================== PROJECTS ===================== -->
+      <div id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" hidden>
+        <section class="ad-card">
+          <h1 id="p-form-title">Add a project</h1>
+          <form id="p-form" autocomplete="off" novalidate>
+            <label for="p-name">Project name *</label>
+            <input id="p-name" maxlength="80" placeholder="e.g. FIRESAT">
+
+            <div class="ad-row">
+              <div><label for="p-dept">Category <span class="ad-hint">(optional)</span></label><input id="p-dept" maxlength="80" placeholder="e.g. Aerospace Research"></div>
+              <div><label for="p-status">Status <span class="ad-hint">(optional)</span></label><input id="p-status" maxlength="40" placeholder="e.g. In progress"></div>
+            </div>
+
+            <label for="p-desc">Description</label>
+            <textarea id="p-desc" rows="8" maxlength="3000"></textarea>
+
+            <label for="p-photos">Photos <span class="ad-hint">(shown as a carousel with arrows when there is more than one)</span></label>
+            <input id="p-photos" type="file" accept="image/*" multiple>
+            <ul id="p-imgs" class="ad-imgs"></ul>
+
+            <h2 class="ad-sub">Project leaders</h2>
+            <p class="ad-note">These appear as large profile cards (photo, name, role, year, LinkedIn). Leave out anyone who shouldn’t be featured.</p>
+            <div id="p-team" class="ad-team"></div>
+            <button type="button" class="ad-ghost" id="p-add-member">+ Add a person</button>
+
+            <label for="p-facts">Highlights <span class="ad-hint">(one per line)</span></label>
+            <textarea id="p-facts" rows="5" maxlength="1500" placeholder="4 sub-teams: Mechanical, Electrical, Systems and Software&#10;15+ members from McMaster Engineering&#10;[Project outline](https://example.com)"></textarea>
+            <p class="ad-note">Each line becomes a short dashed list item. Write [link text](https://example.com) to make a link, or [Sponsor package](sponsorship.html) to link to a page on this site.</p>
+
+            <label for="p-url">“Learn More” button link <span class="ad-hint">(optional, must start with https://)</span></label>
+            <input id="p-url" type="url" maxlength="300" placeholder="https://">
+
+            <div class="ad-actions">
+              <button type="submit" class="ad-btn" id="p-save">Publish project</button>
+              <button type="button" class="ad-ghost" id="p-cancel" hidden>Cancel edit</button>
+            </div>
+            <p id="p-msg" class="ad-msg" role="status"></p>
+          </form>
+        </section>
+
+        <section class="ad-card">
+          <h2>All projects</h2>
+          <ul id="p-list" class="ad-list"></ul>
+          <p class="ad-note">Projects appear on the site in this order. Changes go live about a minute after you publish.</p>
+        </section>
+      </div>
     </div>
   </main>
   <script src="js/writeup.js"></script>

@@ -1,16 +1,38 @@
 {
-  "_howTo": "Each project is one card. 'team' is optional. For each person: 'name' (required), 'role', 'lead' (true for the project lead, who is shown first with a Lead tag), 'photo' (a path like images/members/jane-doe.jpg; with no photo their initials are shown) and 'linkedin' (optional link on their name). 'status' is optional (for example 'In progress'). The team below is PLACEHOLDER: replace it with the real people.",
+  "_howTo": "Each project is one wide card. Easiest: use the admin page (the small dot at the bottom of the site) and open the Projects tab. Fields: name, department, status (optional), description, images (a photo carousel; each can have a caption), team (the project's leaders: name, role, year, photo, linkedin; \"lead\": true puts someone first), facts (short highlight lines; [text](https://link) makes a link) and url (optional Learn More button).",
   "projects": [
     {
       "name": "FIRESAT",
-      "image": "images/projects/firesat.jpeg",
-      "imagePosition": "center 40%",
       "department": "Aerospace Research",
-      "description": "FIRESAT (Fire Intervention and Rescue Expedition Satellite) is a student-led aerospace research initiative developing a low-cost wildfire detection system for future integration into a 3U CubeSat. The project aims to test the AI model Sundance for thermal-based wildfire detection under mission-like conditions on a high-altitude balloon (HAB), combining aerospace engineering, embedded systems, and artificial intelligence.",
-      "url": "https://www.instagram.com/p/DbuTd8oEROP/",
+      "description": "FIRESAT (Fire Intervention and Rescue Expedition Satellite) is a student-led aerospace research initiative developing a high-altitude weather balloon demonstrator as an initial step toward a future 2U CubeSat mission in Low Earth Orbit (LEO). The project aims to test and validate the performance of a Raspberry Pi Compute Module 5 (CM5) running the Sundance AI model for thermal-based wildfire detection under stratospheric conditions. This early-stage testing will help evaluate the system’s ability to operate under mission-relevant environmental conditions and inform its potential future integration into a CubeSat.",
+      "url": "https://mcmasteru365-my.sharepoint.com/:b:/g/personal/suresk3_mcmaster_ca/IQD9eLnkRsBgQKIYf4ADIyCKASob7ynSkV1AR_Jwaa_S1iY",
       "team": [
-        { "name": "Daniel Wen", "role": "Project Lead", "photo": "images/members/daniel.jpeg", "linkedin": "https://www.linkedin.com/in/wen-daniel/" },
-        { "name": "Kiran Suresh", "role": "Project Lead", "photo": "images/members/kiran.jpeg", "linkedin": "https://www.linkedin.com/in/kiran-suresh-17a685291/" }
+        {
+          "name": "Kiran Suresh",
+          "role": "Project Lead",
+          "year": "Mech Eng, Year 3",
+          "lead": true,
+          "photo": "images/members/kiran.jpeg",
+          "linkedin": "https://www.linkedin.com/in/kiran-suresh-17a685291/"
+        },
+        {
+          "name": "Daniel Wen",
+          "role": "Technical Project Manager",
+          "year": "Eng Phys and Society, Year 3",
+          "photo": "images/members/daniel.jpeg",
+          "linkedin": "https://www.linkedin.com/in/wen-daniel/"
+        }
+      ],
+      "images": [
+        {
+          "src": "images/projects/firesat.jpeg",
+          "alt": "The FIRESAT team and project",
+          "position": "center 40%"
+        }
+      ],
+      "facts": [
+        "4 sub-teams: Mechanical, Electrical, Systems and Software",
+        "15+ members from McMaster Engineering"
       ]
     }
   ]
